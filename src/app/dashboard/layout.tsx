@@ -921,33 +921,33 @@ export default function DashboardLayout({
             return <p className="text-gray-300 font-nunito font-semibold text-sm">Loading plan...</p>;
         }
 
-        let statusText = 'No Active Plan';
-        let subText = '';
-        let statusClass = 'text-gray-400';
+        // let statusText = 'No Active Plan';
+        // let subText = '';
+        // let statusClass = 'text-gray-400';
 
-        if (planType === 'standard') {
-            statusText = 'Standard Plan';
-            statusClass = 'text-green-400';
-        } else if (planType === 'free_trial' && trialEndDate) {
-            const today = new Date();
-            const endDate = new Date(trialEndDate);
-            const diffTime = endDate.getTime() - today.getTime();
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        // if (planType === 'standard') {
+        //     statusText = 'Standard Plan';
+        //     statusClass = 'text-green-400';
+        // } else if (planType === 'free_trial' && trialEndDate) {
+        //     const today = new Date();
+        //     const endDate = new Date(trialEndDate);
+        //     const diffTime = endDate.getTime() - today.getTime();
+        //     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-            if (diffDays > 0) {
-                statusText = 'FREE TRIAL ACTIVE';
-                subText = `${diffDays} days remaining`;
-                statusClass = 'text-dotstark-primary';
-            } else {
-                statusText = 'TRIAL EXPIRED';
-                subText = 'Please upgrade your plan';
-                statusClass = 'text-red-500';
-            }
-        } else if (planType === 'expired') {
-            statusText = 'TRIAL EXPIRED';
-            subText = 'Please upgrade your plan';
-            statusClass = 'text-red-500';
-        }
+        //     if (diffDays > 0) {
+        //         statusText = 'FREE TRIAL ACTIVE';
+        //         subText = `${diffDays} days remaining`;
+        //         statusClass = 'text-dotstark-primary';
+        //     } else {
+        //         statusText = 'TRIAL EXPIRED';
+        //         subText = 'Please upgrade your plan';
+        //         statusClass = 'text-red-500';
+        //     }
+        // } else if (planType === 'expired') {
+        //     statusText = 'TRIAL EXPIRED';
+        //     subText = 'Please upgrade your plan';
+        //     statusClass = 'text-red-500';
+        // }
 
         return (
             <div className="mt-auto pt-6 border-t border-gray-700 mx-3">

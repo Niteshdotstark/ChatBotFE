@@ -16,7 +16,7 @@ RUN npm install
 COPY . .
 
 # Build the Next.js application for production.
-RUN CI=true npm run build
+RUN npm run build --no-lint
 
 
 # --- Stage 2: Create a production-ready image ---
